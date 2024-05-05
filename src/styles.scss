@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'scss/base/base';
 @import 'scss/layout/navbar';
+@import 'scss/layout/header';
 @import 'scss/layout/masterpage';
+@import 'scss/layout/page-content-title';
+@import 'scss/components/home';
