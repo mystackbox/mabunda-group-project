@@ -1,36 +1,65 @@
-/* Global */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica;
+.company-identity-container {
+    display: grid;
+    grid-row: 2;
+    padding: 15px;
+    color: #333;
 }
 
-/* Header */
-header {
+.company-contact-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px 50px;
-    box-shadow: 0 1px 8px #ddd;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-#nav-title {
-    margin-right: auto;
-    font-size: 1.5em;
+.company-name {
+    font-size: 18px;
 }
 
-header li {
-    list-style: none;
-    display: inline-block;
-    padding: 0 20px;
+.company-moto {
+    font-size: 14px;
+    color: brown;
 }
 
-header a {
-    text-decoration: none;
-    color: #555;
-    transition: all 0.3s ease 0s;
+.company-contact {
+    font-size: 15px;
 }
 
-header a:hover {
-    color: #b2dfdb;
+.contact-number {
+    font-size: 13px;
 }
+
+.navbar {
+    background-color: #333;
+    a {
+        color: gray;
+    }
+    a:hover {
+        color: #fff;
+    }
+    a:focus {
+        color: red;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    
+    .custom-toggler.navbar-toggler {
+    border-color: none;
+    } 
+
+    .nav-item {
+        border-bottom: 1px solid gray;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
