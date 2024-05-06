@@ -9,7 +9,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SideBarComponent } from './layout/side-bar/side-bar.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { PageContentTitleComponent } from './layout/page-content-title/page-content-title.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { PageContentTitleComponent } from './layout/page-content-title/page-cont
     FooterComponent,
     NavBarComponent,
     SideBarComponent,
-    PageContentTitleComponent,
 
   ],
   imports: [

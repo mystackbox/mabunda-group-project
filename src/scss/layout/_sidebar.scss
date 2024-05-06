@@ -1,0 +1,44 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    .sidebar-title {
+        border-left: 5px solid red;
+        background-color: #f1f1f1;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .sidebar-item {
+    background-color: #f1f1f1;
+    padding: 12px 10px 0px 10px;        
+        ul {
+            margin-top: 7px;
+        }
+        ul li {
+            list-style: none;
+            margin-left: -30px;
+            font-size: 14px;
+        }
+    }
+
+    .sidebar-item-title {
+        font-weight: bold;
+        font-size: 12px;
+        color: brown;
+        background-color: #fefefe;
+        padding: 8px;
+    }
+
+    .socila-icons {
+        display: flex;
+        column-gap: 10px;
+        margin: 10px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar-item {
+        max-width: auto;   }
+}
