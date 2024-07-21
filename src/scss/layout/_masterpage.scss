@@ -1,77 +1,105 @@
+/*
+    ==================== MasterPage layout section ==================== 
+*/
+
+// ---- MasterPage Grid Layout - mibile first approach
 .master-page-grid { 
-    background-color: #f1f1f1; 
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 0fr 0fr 1fr auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto 1fr;
+    row-gap: 10px;
+
+    //Grid Layout areas
     grid-template-areas: 
-        "navbar navbar"
-        "header header"
-        "main sidebar"
-        "footer footer";  
+        "navbar"
+        "header"
+        "main"
+        "sidebar"
+        "footer"; 
+
+    background-color: #f1f1f1;
     justify-content: center;
     height: 100vh;
-    // gap: 5px; 
     margin: auto;
     max-width: 900px;
 }
 
-//navbar grid area
+// ---- Navbar grid area
 .navbar-container {
     grid-area: navbar;
     background-color: #fff; 
+    border-radius: 0px 0px 10px 10px;
 }
 
-//header grid area
+// ---- Header grid area
 .header-container {
-    background: rgba(76, 175, 80, 0.7);
-    background-image: url("../../assets/images/bg/4.jpg");
-    background-size:cover;
-    background-position: 0px 260px;
-
     grid-area: header;
-    background-color: #fff; 
     padding: 15px;
     display: grid;
-    grid-template-columns: 1fr;
+
+    background: rgba(245,245,245, 0.1);
+    background-image: url("../../assets/images/bg/22.jpg");
+    background-position: top lefts;
+    background-attachment: fixed;
+    border-radius: 10px;
 }
 
+// ---- Page main-content area
 .page-main-contant {
     grid-area: main; 
     background-color: #fff; 
-    padding: 18px;
+    padding: 16px;
+    border-radius: 10px;
  }
 
+ // ---- Sidebar grid area
 .sidebar-container {
     grid-area: sidebar;
     background-color: #fff; 
     padding: 15px;
+    border-radius: 10px;
 }
 
+ // ---- Footer grid area
 .footer-container {
     grid-area: footer;
-    background-color: #fff; 
-    color: gray;
-    padding: 15px;
+    padding: 14px;
+    border-radius: 10px;
 }
 
-@media screen and (max-width: 600px) {
+/*
+    ==================== Responsive Web Design section ==================== 
+*/
 
+
+//  ---- Extra  small mobile devices
+@media screen and (max-width: 479px) {   
+}
+
+// ---- Small mobile devices
+@media screen and (min-width: 480px) and (max-width: 599px) {
+}
+
+// ---- iPads, Tablets
+@media screen and (min-width: 600px) and (max-width: 767px) {
+}
+
+// ---- Medium screens, laptops
+@media screen and (min-width: 760px){
+    .header-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// ---- Medium screens, laptops
+@media screen and (min-width: 768px){
     .master-page-grid { 
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0fr 0fr 1fr auto 1fr 1fr;
         grid-template-areas: 
-            "navbar"
-            "header"
-            "main"
-            "sidebar"
-            "footer";  
-        // grid-template-columns: minmax(auto, 900px);
-        justify-content: center;
-        height: 100vh;
-        // gap: 15px; 
-        padding: 0;
-        margin: auto;
-        max-width: 900px;
+        "navbar navbar"
+        "header header"
+        "main sidebar"
+        "footer footer";  
+
     } 
-  }
+}
+

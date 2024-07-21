@@ -1,32 +1,82 @@
 header {
-    // background: rgba(0, 0, 0, 0.5);
+    // background: rgba(0,0,0, 0.5);
+    background: rgba(245,245,245, 0.1);
     padding: 15px;
     margin: 15px auto 15px 0;
     border-radius: 7px;
     display: grid;
-    row-gap: 15px; 
+    row-gap: 12px; 
     color: #fff;
 
     .hero-header-section {
-        font-size: 26px;
+        font-size: 24px;
         border-left: 5px solid red;
-        padding-left: 5px;
+        padding-left: 5px;  
     }
     
     .hero-subheader-section {
         font-size: 20px;
+        padding-left: 11px;
     }
     
+    //button container
     .hero-button-section {
+      padding-left: 11px;
 
+      //button
       .get-in-touch-btn {
-        background-color: orange;
-        padding: 6px 38px;
-        border: 0;
+        background: rgba(255,69,0, 1);
+        border-radius: 7px;
+        padding: 3px 34px;
+        border: none;
         color: #fff;
         cursor: pointer;
         font-size: 16px;
       }
-    }
+
+      .get-in-touch-btn:hover {
+        background: rgba(255,140,0, 1);
+        color: #fff;
+      }
+    }     
 }
+
+//Extra  small mobile devices
+@media screen and (max-width: 367px) {
+  .header-container {
+      grid-template-columns: 1fr;
+      .hero-subheader-section {
+        display: none;
+      }
+  } 
+}
+
+//Small mobile devices
+@media screen and (min-width: 480px) and (max-width: 599px) {
+}
+
+//iPads, Tablets
+@media screen and (min-width: 600px) and (max-width: 767px) {
+}
+
+//Medium screens, laptops
+@media screen and (min-width: 768px) and (max-width: 991px){
+}
+
+//Desktops, large screens
+@media screen and (min-width: 992px) and (max-width: 1023px) {
+
+}
+
+//Larger screens, TV
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+}
+
+//Extra large screens, TV
+@media screen and (min-width: 1200px) {
+
+}
+
+
 

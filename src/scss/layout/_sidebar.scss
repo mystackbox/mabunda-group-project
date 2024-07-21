@@ -4,41 +4,86 @@
     row-gap: 8px;
 
     .sidebar-title {
-        border-left: 5px solid red;
-        background-color: #f1f1f1;
-        font-weight: bold;
-        padding: 10px;
+        border-left: 6px solid red;
+        border-radius: 7px;
+        background-color:rgba(245,245,245, 0.5);
+        padding: 8px;
     }
+
     .sidebar-item {
-    background-color: #f1f1f1;
-    padding: 12px 10px 0px 10px;        
-        ul {
-            margin-top: 7px;
-        }
-        ul li {
-            list-style: none;
-            margin-left: -30px;
-            font-size: 14px;
-        }
+        background-color: rgba(245,245,245, 0.5);
+        border-radius: 7px;
+        padding: 12px 10px 0px 10px;        
+            ul {
+                margin-top: 7px;
+            }
+            ul li {
+                list-style: none;
+                margin-left: -30px;
+                font-size: 14px;
+            }
     }
 
     .sidebar-item-title {
-        font-weight: bold;
+        // font-weight: bold;
         font-size: 12px;
-        color: brown;
-        background-color: #fefefe;
+        color: lightgray;
+        background-color: #344;
+        border-radius: 7px;
         padding: 8px;
     }
 
     .socila-icons {
+        padding: 15px 0px;
         display: flex;
         column-gap: 10px;
-        margin: 10px;
     }
-
 }
 
-@media screen and (max-width: 400px) {
-    .sidebar-item {
-        max-width: auto;   }
+//Extra  small mobile devices
+@media screen and (min-width: 320px) {
+    .sidebar-address, .sidebar-social-links{
+        display: block;
+    }
 }
+
+//Extra extra-small mobile devices
+@media screen and (max-width: 479px) {
+ .sidebar-social-links{
+        display: none;
+    }
+}
+
+//Small mobile devices
+@media screen and (min-width: 480px) and (max-width: 600px) {
+    .sidebar-address, .sidebar-social-links{
+        display: none;
+    }
+}
+
+//iPads, Tablets
+@media screen and (min-width: 601px) and (max-width: 767px) {
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        column-gap: 8px;
+        justify-content: space-between;
+
+        .sidebar-title {
+            display: none;
+        }
+
+        .sidebar-item {
+            width: 100%;
+        }
+    }
+}
+
+//Medium screens, laptops
+@media screen and (min-width: 768px) {
+    .sidebar-address, .sidebar-social-links{
+        display: block;
+    }
+ }
+
+

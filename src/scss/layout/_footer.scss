@@ -1,28 +1,7 @@
 footer {
 font-size: 16px;
 display:flex;
-justify-content: space-evenly;
-text-align: center;
+    justify-content: space-evenly;
+    text-align: center;
+    color:lightgray;
 }
-
-
-// footer {
-//     font-size: 12px;
-// display: grid;
-// grid-template-columns: 1fr 1fr 1fr 1fr;
-// justify-content: space-evenly;
-// column-gap: 15px;
-
-//     .item-container{
-//     background-color: #f1f1f1;
-//     padding: 10px;
-        
-//     ul {
-//         margin-top: 5px;
-//     }
-//     ul li {
-//         list-style: none;
-//         margin-left: -30px;
-//     }
-//     }
-// }

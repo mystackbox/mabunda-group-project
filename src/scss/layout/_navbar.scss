@@ -1,15 +1,20 @@
+.site-identity-hyperlink {
+    text-decoration: none;
+}
 .company-identity-container {
     display: grid;
     grid-row: 2;
     padding: 15px;
     color: #333;
-}
+    border-radius: 10px;
 
-.company-contact-container {
-    display: flex;
-    max-width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    .company-contact-container {
+        display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
 }
 
 .company-name {
@@ -27,14 +32,14 @@
     color: red;
 }
 
-// .contact-number {
-//     font-size: 14px;
-// }
 
+//Navbar css
 .navbar {
     background-color: #333;
+    border-radius: 0px 0px 10px 10px;
+
     a {
-        color: gray;
+        color: lightgray;
     }
     a:hover {
         color: #fff;
@@ -42,26 +47,95 @@
     a:focus {
         color: red;
     }
+
 }
 
+/*
+    ==================== Responsive Web Design section ==================== 
+*/
 
-@media screen and (max-width: 400px) {
-    .custom-toggler .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-    }
-    
+//Extra  small mobile devices
+@media screen and (max-width: 479px) {
+}
+//Small mobile devices
+@media screen and (min-width: 480px) and (max-width: 599px) {
+
+}
+// ---- Navigation-bar break-point
+@media screen and (max-width: 575px) {
     .custom-toggler.navbar-toggler {
-    border-color: none;
+    border-color: rgba(128,128,128, 0);
     } 
 
+    .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    border-color: rgba(128,128,128, 1);
+}
+
     .nav-item {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid rgba(128,128,128, 0.3);
     }
 }
 
-@media screen and (min-width: 900px) {
-    .navbar-brand {
-        display: none;
+@media screen and (min-width: 576px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+
+// ---- iPads, Tablets
+@media screen and (min-width: 600px) and (max-width: 767px) {
+}
+
+// ---- Medium screens, laptops
+@media screen and (min-width: 768px) and (max-width: 991px){
+}
+
+// ---- Desktops, large screens
+@media screen and (min-width: 992px) and (max-width: 1023px) {
+}
+
+// ---- Larger screens, TV
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+}
+
+// ---- Extra large screens, TV
+@media screen and (min-width: 1200px) {
+}
+
+
+
+
+
+
+
+
+//Extra  small mobile devices
+@media screen and (max-width: 480px) and (min-width: 481px) {
+}
+
+
+@media screen and (max-width: 575px) {
+    .custom-toggler.navbar-toggler {
+    border-color: rgba(128,128,128, 0);
+    } 
+
+    .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    border-color: rgba(128,128,128, 1);
+}
+
+    .nav-item {
+        border-bottom: 1px solid rgba(128,128,128, 0.3);
     }
 }
+
+
+
+
+
+
+
+
+
 
