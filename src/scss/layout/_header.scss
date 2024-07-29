@@ -1,47 +1,113 @@
+/*  Site header */
 header {
-    // background: rgba(0,0,0, 0.5);
-    background: rgba(245,245,245, 0.1);
+    background: rgba(245,245,245, 0.3);
     padding: 15px;
     margin: 15px auto 15px 0;
-    border-radius: 7px;
+    min-height: 140px;
     display: grid;
     row-gap: 12px; 
     color: #fff;
+    cursor:pointer;
 
-    .hero-header-section {
-        font-size: 24px;
-        border-left: 5px solid red;
-        padding-left: 5px;  
-    }
+    animation-name: fade-bg;
+    animation-duration: 2s;
+
+      /*  Hero section */
+      .hero-header-section {
+          font-size: 24px;
+          border-left: 7px solid lightgrey;
+          padding-left: 5px; 
+          font-stretch: normal;
+          
+          transition-property: all;
+          transition-duration: 0.5s;
+
+          animation-name: left-ease-in;
+          animation-duration: 2s;
+      }
+
+      .hero-header-section:hover {
+        border-left: 20px solid lightgrey;
+        padding-left: 15px; 
+      }
     
+    /*  Hero subheader section */
     .hero-subheader-section {
         font-size: 20px;
         padding-left: 11px;
     }
     
-    //button container
+    /*  Hero button section */
     .hero-button-section {
       padding-left: 11px;
+      margin-top: 8px;
 
-      //button
+      /* button */
       .get-in-touch-btn {
-        background: rgba(255,69,0, 1);
-        border-radius: 7px;
+        background-color: rgba(0,0,0, 0);
+        border: 1px solid #fff;
         padding: 3px 34px;
-        border: none;
         color: #fff;
         cursor: pointer;
         font-size: 16px;
+        
+        /* transform eg Bg-color */
+        transition-property: all;
+        transition-duration: 0.8s;
+        
+        /* animate eg move from left to right */
+        animation-name: bottom-ease-in;
+        animation-duration: 2s;
+
       }
 
       .get-in-touch-btn:hover {
-        background: rgba(255,140,0, 1);
-        color: #fff;
+        background-color: rgba(255,140,0, 1);
+        border: 1px solid rgba(255,140,0, 1);
       }
-    }     
+    }  
 }
 
-//Extra  small mobile devices
+/*
+  Animations - section
+    - the header-container-section
+    - the hero section
+    - the hero subheader-section
+    - the hero-button-section
+*/
+
+@keyframes fade-bg {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  } 
+}
+
+@keyframes left-ease-in {
+  from {
+    margin-left: -20%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes bottom-ease-in {
+  from {
+    margin-left: 60%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+/* ====== Header Responsive Design Section ====== */
+
+/* Extra  small mobile devices */
 @media screen and (max-width: 367px) {
   .header-container {
       grid-template-columns: 1fr;
@@ -51,31 +117,28 @@ header {
   } 
 }
 
-//Small mobile devices
+/* Small mobile devices */
 @media screen and (min-width: 480px) and (max-width: 599px) {
 }
 
-//iPads, Tablets
+/* iPads, Tablets */
 @media screen and (min-width: 600px) and (max-width: 767px) {
 }
 
-//Medium screens, laptops
+/* Medium screens, laptops */
 @media screen and (min-width: 768px) and (max-width: 991px){
 }
 
-//Desktops, large screens
+/* Desktops, large screens */
 @media screen and (min-width: 992px) and (max-width: 1023px) {
-
 }
 
-//Larger screens, TV
+/* Larger screens, TV */
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
-
 }
 
-//Extra large screens, TV
+/* Extra large screens, TV */
 @media screen and (min-width: 1200px) {
-
 }
 
 

@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'base/reset';
+@import 'base/base';
+@import 'layout/navbar';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/page-content-title';
+@import 'layout/sidebar';
+
+@import 'layout/masterpage';
+@import 'components/about';
+@import 'components/home';
