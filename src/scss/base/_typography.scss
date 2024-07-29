@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+/*  Global html body styles */
+body {
+    background-color: $global-bg-color; 
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-size: $global-font-size;
+    font-style: normal;
+    color: $global-font-color;
+}
