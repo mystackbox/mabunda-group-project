@@ -1,0 +1,31 @@
+/* Page content Grid Layout */
+@mixin page-content-layout() {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+                        "page-name"
+                        "page-contant";
+    justify-content: center;
+}
+
+/* page-title and sidebar styles */
+@mixin page-title-styles() {
+    border-left: 6px solid red;
+    grid-area: page-name;
+    padding: 8px; 
+}
+
+/* page-content-section */
+@mixin page-content-section() {
+    background: rgba(245,245,245, 0.5);
+    grid-area: paragraph-row;
+    padding: 15px;
+
+    /* page-content-section-header */
+    .section-header {
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+
