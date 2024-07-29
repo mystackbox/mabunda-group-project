@@ -1,104 +1,88 @@
-/*
-    ==================== MasterPage layout section ==================== 
-*/
+/* ====== MasterPage Grid Layout ====== */
 
-// ---- MasterPage Grid Layout - mibile first approach
 .master-page-grid { 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr auto 1fr;
-    row-gap: 10px;
-
-    //Grid Layout areas
     grid-template-areas: 
-        "navbar"
-        "header"
-        "main"
-        "sidebar"
-        "footer"; 
+                        "navbar"
+                        "header"
+                        "main"
+                        "sidebar"
+                        "footer"; 
 
-    background-color: #f1f1f1;
     justify-content: center;
-    height: 100vh;
+    height: 0vh;
     margin: auto;
     max-width: 900px;
 }
 
-// ---- Navbar grid area
+/*  Navbar Grid Area */
 .navbar-container {
     grid-area: navbar;
-    background-color: #fff; 
-    border-radius: 0px 0px 10px 10px;
 }
 
-// ---- Header grid area
+/*  Header Grid Area */
 .header-container {
     grid-area: header;
     padding: 15px;
     display: grid;
 
-    background: rgba(245,245,245, 0.1);
-    background-image: url("../../assets/images/bg/22.jpg");
-    background-position: top lefts;
-    background-attachment: fixed;
-    border-radius: 10px;
+    background-image: url("../../assets/images/bg/24.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-// ---- Page main-content area
+/*  Page main-content area */
 .page-main-contant {
     grid-area: main; 
     background-color: #fff; 
-    padding: 16px;
-    border-radius: 10px;
+    padding: 16px 16px 0px 16px;
  }
 
- // ---- Sidebar grid area
+/*   Sidebar Grid Area */
 .sidebar-container {
     grid-area: sidebar;
     background-color: #fff; 
-    padding: 15px;
-    border-radius: 10px;
+    padding: 4px 16px 0px 16px;
 }
 
- // ---- Footer grid area
+/*   Footer Grid Area */
 .footer-container {
     grid-area: footer;
     padding: 14px;
-    border-radius: 10px;
 }
 
-/*
-    ==================== Responsive Web Design section ==================== 
-*/
+/* ====== MasterPage Responsive Design Section ====== */
 
-
-//  ---- Extra  small mobile devices
-@media screen and (max-width: 479px) {   
-}
-
-// ---- Small mobile devices
-@media screen and (min-width: 480px) and (max-width: 599px) {
-}
-
-// ---- iPads, Tablets
+/*  iPads, Tablets */
 @media screen and (min-width: 600px) and (max-width: 767px) {
+    .sidebar-container {
+        padding:16px;
+    }
 }
 
-// ---- Medium screens, laptops
+/*  Medium screens, laptops */
 @media screen and (min-width: 760px){
     .header-container{
         grid-template-columns: 1fr 1fr;
     }
+
+    .sidebar-container {
+        padding:16px;
+    }
 }
 
-// ---- Medium screens, laptops
+/*   Medium screens, laptops  */
 @media screen and (min-width: 768px){
+
+   /*  Large screens - Grid Layout areas */
     .master-page-grid { 
         grid-template-areas: 
-        "navbar navbar"
-        "header header"
-        "main sidebar"
-        "footer footer";  
+                            "navbar navbar"
+                            "header header"
+                            "main sidebar"
+                            "footer footer";  
 
     } 
 }

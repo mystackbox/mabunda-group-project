@@ -1,43 +1,75 @@
 <div class="page-contant-container">
-    <div class="page-content-name bg-light"> 
-        <span> WELCOME </span> 
+    <div class="page-title"> 
+        {{title | uppercase}}
     </div>
     <div class="page-contant">
         <div class="first-row-content">
 
+            
             <div class="card-container" id="left-side-card">
-                <img src="/assets/images/featured/17.jpg" class="card-image"/>
+                <a class="nav-link" routerLink="/services">
+                <div class="image-container">
+                    <img src="/assets/images/featured/17.jpg" class="card-image" id="left-card-img"/>
+                    <div class="overlay">
+                        <p class="overlay-text">Health</p>
+                    </div>
+                </div>
+                </a>
+
                 <div class="card-title">
-                    Environmental Health Services
+                    We offer Environmental Health Services.
                 </div>
                 <div class="card-btn">
-                    <button>READ MORE</button>
+                    <button (click)="redirecToServices()">MORE &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"> </i></button>
                 </div>
             </div> 
 
-            <div class="card-container" id="left-side-card">
-                <img src="/assets/images/featured/2.jpg" class="card-image"/>
-                <div class="card-title">
-                    Environmental Safety Services
+            <div class="card-container" id="center-side-card">
+                <a class="nav-link" routerLink="/services">
+                <div class="image-container">
+                    <img src="/assets/images/featured/11.jpg" class="card-image"  id="center-card-img"/>
+                    <div class="overlay">
+                        <p class="overlay-text">Safety</p>
+                    </div>
                 </div>
+                </a>
+
+                <div class="card-title">
+                    We offer Environmental Safety Services.
+                </div>           
                 <div class="card-btn">
-                    <button>READ MORE</button>
+                    <button (click)="redirecToServices()">MORE &nbsp; 
+                        <i class="fa fa-chevron-right" aria-hidden="true"> </i>
+                        
+                    </button>
                 </div>
             </div> 
 
-            <div class="card-container" id="left-side-card">
-                <img src="/assets/images/featured/13.jpg" class="card-image"/>
+            <div class="card-container" id="right-side-card">
+                <a class="nav-link" routerLink="/services">
+                 <div class="image-container">
+                    <img src="/assets/images/featured/13.jpg" class="card-image"  id="right-card-img"/>
+                    <div class="overlay">
+                        <p class="overlay-text">Engineering</p>
+                    </div>
+                </div>
+                </a>
+
                 <div class="card-title">
-                    Engineering Services
+                    And Electrical Engineering Services.
                 </div>
                 <div class="card-btn">
-                    <button>READ MORE</button>
+                    <button (click)="redirecToServices()">MORE &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"> </i></button>
                 </div>
             </div> 
         </div>
         <div class="second-row-content">
-            <div class="paragraph-header">YOUR EHS SPECIALIST</div>
-            Mabunda Group Pty. Ltd is the EHS consulting company, geared to assist the clients to comply with OHS, Environmental, Food Safety and other applicable legislation and to empower all interested and affected stakeholders.
+
+            <div class="paragraph-header">WE ARE EHS SPECIALISTS</div>
+            <img src="/assets/images/featured/10.jpg" class="paragraph-img"  id="paragraph-img"/>
+                Mabunda Group Pty. Ltd is the EHS consulting company, geared to assist the clients to comply with OHS, 
+                Environmental, Food Safety and other applicable legislation and to empower 
+                all interested and affected stakeholders.
         </div>
     </div>
 </div>

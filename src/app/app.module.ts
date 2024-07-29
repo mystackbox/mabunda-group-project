@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MasterPageComponent } from './layout/master-page/master-page.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -18,10 +19,10 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     FooterComponent,
     NavBarComponent,
     SideBarComponent,
-
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule
   ],
   providers: [

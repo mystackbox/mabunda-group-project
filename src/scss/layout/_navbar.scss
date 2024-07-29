@@ -4,76 +4,105 @@
 .company-identity-container {
     display: grid;
     grid-row: 2;
+    
+    background: #ADA996;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     padding: 15px;
     color: #333;
-    border-radius: 10px;
 
+    .company-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .company-moto {
+        font-size: 14px;
+        color: brown;
+    }
+    
     .company-contact-container {
         display: flex;
         max-width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
 
+        .company-contact {
+            font-size: 14px;
+            color: gray;
+        }
     }
 }
-
-.company-name {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.company-moto {
-    font-size: 14px;
-    color: brown;
-}
-
-.company-contact {
-    font-size: 14px;
-    color: red;
-}
-
 
 //Navbar css
 .navbar {
     background-color: #333;
-    border-radius: 0px 0px 10px 10px;
+    padding: 0px;
 
-    a {
+    .nav-item {
+        margin-right: 10px;
+        border-bottom: 5px solid #333;
+        padding-right: 0px;
+        
+        transition-property: all;
+        transition-duration: 0.7s;
+    }
+
+    .nav-item:hover{
+        padding-right: 40px;
+        border-bottom: 5px solid red;
+    }
+    
+    .nav-link, .navbar-brand {
         color: lightgray;
     }
-    a:hover {
-        color: #fff;
-    }
-    a:focus {
-        color: red;
+    
+    .navbar-brand {
+        color: lightgray;
+        margin: 3px ;
     }
 
+    .nav-link:hover {
+        color: #fff;
+    }
+    .nav-link:focus {
+        color: red;
+    }
 }
 
 /*
-    ==================== Responsive Web Design section ==================== 
+    ==================== NavBar Responsive Design section ==================== 
 */
 
 //Extra  small mobile devices
 @media screen and (max-width: 479px) {
+    .company-contact {
+        padding-top: 10px;
+    }
 }
+
 //Small mobile devices
 @media screen and (min-width: 480px) and (max-width: 599px) {
-
+    .company-contact {
+        padding-top: 10px;
+    }
 }
+
 // ---- Navigation-bar break-point
 @media screen and (max-width: 575px) {
-    .custom-toggler.navbar-toggler {
-    border-color: rgba(128,128,128, 0);
-    } 
-
-    .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-    border-color: rgba(128,128,128, 1);
-}
-
-    .nav-item {
-        border-bottom: 1px solid rgba(128,128,128, 0.3);
+    .navbar-toggler  {  
+        border: none;  
+    }
+    .navbar-toggler:focus {
+        box-shadow: none; 
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    .nav-link {
+        border-top: 1px solid rgba(128,128,128, 0.3);
+        padding: 4px 0 2px 0;
     }
 }
 
@@ -103,32 +132,10 @@
 @media screen and (min-width: 1200px) {
 }
 
-
-
-
-
-
-
-
 //Extra  small mobile devices
 @media screen and (max-width: 480px) and (min-width: 481px) {
 }
 
-
-@media screen and (max-width: 575px) {
-    .custom-toggler.navbar-toggler {
-    border-color: rgba(128,128,128, 0);
-    } 
-
-    .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128,128,128, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-    border-color: rgba(128,128,128, 1);
-}
-
-    .nav-item {
-        border-bottom: 1px solid rgba(128,128,128, 0.3);
-    }
-}
 
 
 
