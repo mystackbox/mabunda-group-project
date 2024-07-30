@@ -2,142 +2,116 @@
 
 /* ====== Home page Grid Layout ====== */
 .page-contant-container {
-    @include page-content-layout();
-    row-gap: $global-gap; 
-}
-
- /* page-title section */
-.page-title {
-    @include page-title-styles(); 
-}
-
- /* page content section */
-.page-contant {
-
-    grid-area: page-contant;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "paragraph-row"
-    "cards-row";
-    gap: $global-gap;
-    justify-content: center;
-
-    /* Cards - page content section */
-    .cards-row-content {
-        background: $global-bg-color;
-        grid-area: cards-row;
-        display: flex;
-        gap: $global-gap - 10;
-        justify-content: space-around;
-
-        .card-container {
-            margin: 15px;
-            width:100%;
-            background-color: #fff;
-            border: 15px solid #fff;
-            .image-container {
-                position: relative;
-                object-fit: contain;
-
-                .card-image {
-                    max-width: 100%;
-                    min-height: auto;
-                }
-
-                #left-card-img {
-                    animation-name: fade-in;
-                    animation-duration: 8s;
-
-                    // animation-name: left-ease-in;
-                    // animation-duration: 2s; 
-                                            
-                }
-
-                #center-card-img {
-                    animation-name: fade-in;
-                    animation-duration: 8s;
-                }
-
-                #right-card-img {
-                    animation-name: fade-in;
-                    animation-duration: 8s;
-
-                    // animation-name: right-ease-in;
-                    // animation-duration: 2s;                          
-                }
-                
-                .overlay {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    background: rgba(0,0,0, 0.5);
-                    overflow: hidden;
-                    width: 100%;
-                    height: 0;
-                    transition: .7s ease;
-                }
-
-                .overlay-text {
-                    color: white;
-                    font-size: 16px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    -webkit-transform: translate(-50%, -50%);
-                    -ms-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
-                    text-align: center;
-                }
-
-                &:hover .overlay {
-                    height: 100%;                        
-                }
-            }
-
-            .card-title {
-                min-height: 66px;
-                text-align: center;
-                margin-top: 13px;
-                padding-bottom: 5px;
-            }
-
-            /* Card buttom */
-            .card-btn button {
-                width: 100%;
-                border: none;
-                background-color: orangered;
-                color: white;
-                padding: 5px 28px;
-                
-                font-size: $global-font-size - 4;
-                text-align: center;
-
-                transition-property: background-color;
-                transition-duration: 1s;
-
-                &:hover{
-                    background-color: #333;
-                }
-            }    
-        }
-    }
-
-    /* page-content-section */
-    .paragraph-row-content {
+    @include page-content-layout;
     
-        @include page-content-section();
+    /* page-title section */
+    .page-title {
+    @include page-title-styles; 
+    }
 
-        .paragraph-img {
-            width: 165px;
-            float: left;
-            margin-right: 20px;
-            margin-top: 6px;
-        }
+    #home-page-content {
+        @include page-content-section;
+        grid-template-areas: 
+        "paragraph-section"
+        "cards-section";
+        padding-bottom: 10px;
     }
 }
+
+/* cards - page content section */
+.cards-section {
+    background: $global-bg-color;
+    grid-area: cards-section;
+    display: flex;
+    gap: $global-gap - 10;
+    justify-content: space-around;
+
+    .card-container {
+        margin: 15px;
+        width:100%;
+        background-color: #fff;
+        border: 15px solid #fff;
+        .image-container {
+            position: relative;
+            object-fit: contain;
+
+            .card-image {
+                max-width: 100%;
+                min-height: auto;
+            }
+
+            #left-card-img, #center-card-img,  #right-card-img {
+                animation-name: fade-in;
+                animation-duration: 8s;                     
+            }
+            
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0,0,0, 0.5);
+                overflow: hidden;
+                width: 100%;
+                height: 0;
+                transition: .7s ease;
+            }
+
+            .overlay-text {
+                color: white;
+                font-size: 16px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+            &:hover .overlay {
+                height: 100%;                        
+            }
+        }
+
+        .card-title {
+            min-height: 66px;
+            text-align: center;
+            margin-top: 13px;
+            padding-bottom: 5px;
+        }
+
+        /* Card buttom */
+        .card-btn button {
+            width: 100%;
+            border: none;
+            background-color: orangered;
+            color: white;
+            padding: 5px 28px;
+            font-size: $global-font-size - 4;
+            text-align: center;
+            transition-property: background-color;
+            transition-duration: 1s;
+            &:hover{
+                background-color: #333;
+            }
+        }    
+    }
+}
+
+/* page-content-section */
+.paragraph-section {
+    grid-area: paragraph-section;
+    @include text-section;
+
+    .paragraph-img {
+        width: 110px;
+        float: left;
+        margin-right: 20px;
+        margin-top: 6px;
+    }
+}
+
 
 /* ====== Animations Section ====== */
 
@@ -178,11 +152,11 @@
  /* Views on different screen sizes */
 @media screen and (max-width: 599px) {
     /* Cards - page content section - mobile mode*/
-    .page-contant .cards-row-content {
+    .page-contant .cards-section {
             display: none;
     }
     /* paragraph - page content section - mobile mode*/
-    .page-contant .paragraph-row-content {
+    .page-contant .paragraph-section {
         margin-bottom: 0px;
     }
 

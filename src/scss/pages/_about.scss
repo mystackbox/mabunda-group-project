@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+/* ====== Home page Grid Layout ====== */
+.page-contant-container {
+    @include page-content-layout;
+
+ /* page-title section */
+    .page-title {
+    @include page-title-styles; 
+    }
+
+    #about-page-content {
+        @include page-content-section;
+        grid-template-areas: 
+        "background-row"
+        "mission-row"
+        "objectives-row";
+    }
+
+    .background-section, .mission-section, .objectives-section {
+      @include text-section;
+    }
+}
+
+ /* page-content-section */
+ .background-section {
+    grid-area: background-row;
+}
+
+ /* page-content-section */
+ .mission-section {
+    grid-area: mission-row; 
+}
+
+ /* page-content-section */
+ .objectives-section {
+    grid-area: objectives-row; 
+}
+
+/* ====== Homepage Responsive Design Section ====== */
+
+ /* Views on different screen sizes */
+@media screen and (max-width: 599px) {
+    /* Cards - page content section - mobile mode*/
+    .page-contant .cards-row-content {
+            display: none;
+    }
+    /* paragraph - page content section - mobile mode*/
+    .page-contant .paragraph-row-content {
+        margin-bottom: 0px;
+    }
+
+}
+
+/* Views on bigger screen sizes */
+@media screen and (min-width: 600px) {
+    .paragraph-img {
+        display: none;
+    }
+}
+
+
+
+
+
+
+

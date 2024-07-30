@@ -389,66 +389,56 @@ footer {
 .page-contant-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 1fr auto;
   grid-template-areas: "page-name" "page-contant";
   justify-content: center;
   row-gap: 10px;
+  /* page-title section */
 }
-
-/* page-title section */
-.page-title {
-  border-left: 6px solid red;
+.page-contant-container .page-title {
   grid-area: page-name;
+  border-left: 6px solid red;
   padding: 8px;
 }
-
-/* page content section */
-.page-contant {
+.page-contant-container #home-page-content {
   grid-area: page-contant;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "paragraph-row" "cards-row";
-  gap: 10px;
   justify-content: center;
-  /* Cards - page content section */
-  /* page-content-section */
+  gap: 10px;
+  grid-template-areas: "paragraph-section" "cards-section";
+  padding-bottom: 10px;
 }
-.page-contant .cards-row-content {
+
+/* cards - page content section */
+.cards-section {
   background: rgba(245, 245, 245, 0.5);
-  grid-area: cards-row;
+  grid-area: cards-section;
   display: flex;
   gap: 0px;
   justify-content: space-around;
 }
-.page-contant .cards-row-content .card-container {
+.cards-section .card-container {
   margin: 15px;
   width: 100%;
   background-color: #fff;
   border: 15px solid #fff;
   /* Card buttom */
 }
-.page-contant .cards-row-content .card-container .image-container {
+.cards-section .card-container .image-container {
   position: relative;
   object-fit: contain;
 }
-.page-contant .cards-row-content .card-container .image-container .card-image {
+.cards-section .card-container .image-container .card-image {
   max-width: 100%;
   min-height: auto;
 }
-.page-contant .cards-row-content .card-container .image-container #left-card-img {
+.cards-section .card-container .image-container #left-card-img, .cards-section .card-container .image-container #center-card-img, .cards-section .card-container .image-container #right-card-img {
   animation-name: fade-in;
   animation-duration: 8s;
 }
-.page-contant .cards-row-content .card-container .image-container #center-card-img {
-  animation-name: fade-in;
-  animation-duration: 8s;
-}
-.page-contant .cards-row-content .card-container .image-container #right-card-img {
-  animation-name: fade-in;
-  animation-duration: 8s;
-}
-.page-contant .cards-row-content .card-container .image-container .overlay {
+.cards-section .card-container .image-container .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -459,7 +449,7 @@ footer {
   height: 0;
   transition: 0.7s ease;
 }
-.page-contant .cards-row-content .card-container .image-container .overlay-text {
+.cards-section .card-container .image-container .overlay-text {
   color: white;
   font-size: 16px;
   position: absolute;
@@ -470,16 +460,16 @@ footer {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.page-contant .cards-row-content .card-container .image-container:hover .overlay {
+.cards-section .card-container .image-container:hover .overlay {
   height: 100%;
 }
-.page-contant .cards-row-content .card-container .card-title {
+.cards-section .card-container .card-title {
   min-height: 66px;
   text-align: center;
   margin-top: 13px;
   padding-bottom: 5px;
 }
-.page-contant .cards-row-content .card-container .card-btn button {
+.cards-section .card-container .card-btn button {
   width: 100%;
   border: none;
   background-color: orangered;
@@ -490,20 +480,25 @@ footer {
   transition-property: background-color;
   transition-duration: 1s;
 }
-.page-contant .cards-row-content .card-container .card-btn button:hover {
+.cards-section .card-container .card-btn button:hover {
   background-color: #333;
 }
-.page-contant .paragraph-row-content {
+
+/* page-content-section */
+.paragraph-section {
+  grid-area: paragraph-section;
+  padding: 10px;
   background: rgba(245, 245, 245, 0.5);
-  grid-area: paragraph-row;
-  padding: 15px;
-  /* page-content-section-header */
 }
-.page-contant .paragraph-row-content .section-header {
-  margin: 0px 0px 10px 0px;
+.paragraph-section .section-header {
+  margin-bottom: 10px;
 }
-.page-contant .paragraph-row-content .paragraph-img {
-  width: 165px;
+.paragraph-section .paragraph {
+  padding-left: 10px;
+  border-left: 5px solid lightgrey;
+}
+.paragraph-section .paragraph-img {
+  width: 110px;
   float: left;
   margin-right: 20px;
   margin-top: 6px;
@@ -539,6 +534,76 @@ footer {
     margin-left: 0%;
   }
 }
+/* ====== Homepage Responsive Design Section ====== */
+/* Views on different screen sizes */
+@media screen and (max-width: 599px) {
+  /* Cards - page content section - mobile mode*/
+  .page-contant .cards-section {
+    display: none;
+  }
+  /* paragraph - page content section - mobile mode*/
+  .page-contant .paragraph-section {
+    margin-bottom: 0px;
+  }
+}
+/* Views on bigger screen sizes */
+@media screen and (min-width: 600px) {
+  .paragraph-img {
+    display: none;
+  }
+}
+/* You can add global styles to this file, and also import other style files */
+/* ====== Home page Grid Layout ====== */
+.page-contant-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "page-name" "page-contant";
+  justify-content: center;
+  row-gap: 10px;
+  /* page-title section */
+}
+.page-contant-container .page-title {
+  grid-area: page-name;
+  border-left: 6px solid red;
+  padding: 8px;
+}
+.page-contant-container #about-page-content {
+  grid-area: page-contant;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 10px;
+  grid-template-areas: "background-row" "mission-row" "objectives-row";
+}
+.page-contant-container .background-section, .page-contant-container .mission-section, .page-contant-container .objectives-section {
+  padding: 10px;
+  background: rgba(245, 245, 245, 0.5);
+}
+.page-contant-container .background-section .section-header, .page-contant-container .mission-section .section-header, .page-contant-container .objectives-section .section-header {
+  margin-bottom: 10px;
+}
+.page-contant-container .background-section .paragraph, .page-contant-container .mission-section .paragraph, .page-contant-container .objectives-section .paragraph {
+  padding-left: 10px;
+  border-left: 5px solid lightgrey;
+}
+
+/* page-content-section */
+.background-section {
+  grid-area: background-row;
+}
+
+/* page-content-section */
+.mission-section {
+  grid-area: mission-row;
+}
+
+/* page-content-section */
+.objectives-section {
+  grid-area: objectives-row;
+}
+
 /* ====== Homepage Responsive Design Section ====== */
 /* Views on different screen sizes */
 @media screen and (max-width: 599px) {
