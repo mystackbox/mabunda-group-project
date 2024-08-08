@@ -1,11 +1,87 @@
-<div class="page-title"> 
-    {{title | uppercase }}
+<div class="page-contant-container">
+
+    <div class="page-title"> 
+        {{title | uppercase}}
+    </div>
+
+    <div class="page-contant" id="contact-page-content">
+
+        <div class="contact-form-section"> 
+            <!-- <div>Please fill-in the necessary details.</div>    -->
+            <form  [formGroup]="_contactForm" class="contact-form" id="contact-form">
+        
+                <div class="form-group">
+                    <input type="text" formControlName="name"
+                    class="form-control form-control-sm form-control-textbox"
+                    placeholder="*Your name">
+        
+                    <!--
+                        Custom validation
+                        Multiple Validation Error messages  
+                    -->
+                    <div *ngIf="name?.touched && name?.invalid" class="form-validation-error-message">
+                        <div *ngIf="name?.errors?.['required']" >
+                            * Name required
+                        </div>
+                        <div *ngIf="name?.errors?.['whiteSpace']">
+                            * Name  cannot contain whitespace
+                        </div>
+        
+                        <div *ngIf="name?.errors?.['numeric']">
+                            * Name cannot contain numeric values
+                        </div>
+        
+                        <div *ngIf="name?.errors?.['specialCharacter']">
+                            * Name cannot contain special chatacters
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <input type="email" formControlName="emailAddress" class="form-control form-control-sm form-control-textbox" placeholder="*Email address">
+        
+                    <!--Multiple Validation Error messages -->
+                    <div *ngIf="emailAddress?.touched && emailAddress?.invalid" class="form-validation-error-message">
+                        <div *ngIf="emailAddress?.errors?.['required']">* Email address
+                            required </div>
+                        <!-- <div *ngIf="name.errors?.['maxlength']"> First name should have a minimum of 5 characters </div> -->
+                        <div *ngIf="emailAddress?.errors?.['email']"> * Email address format is incorrect</div>
+        
+                        <div *ngIf="emailAddress?.errors?.['emailExist']">* Email address alreay exist </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <textarea  type="text" formControlName="message" id="message" rows="3" class="form-control form-control-sm"
+                    placeholder="*Message"></textarea>
+        
+                    <!--Multiple Validation Error messages -->
+                    <div *ngIf="message?.touched && message?.invalid" class="form-validation-error-message">
+                        <div *ngIf="message?.errors?.['required']">* Message
+                            required </div>
+                            
+                        <div *ngIf="message?.errors?.['whiteSpace']">
+                            * Message cannot contain whitespace</div>
+                            
+                        <div *ngIf="message?.errors?.['minlength']"> * Message should
+                            have a minimum of
+                            {{message?.errors?.['minlength'].requiredLength}}
+                            characters </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <input type="submit" value="SUBMIT" (click)="sendMesssage()" class="btn btn-sm submit-button"> 
+                    <input type="reset" value="CLEAR" (click)="sendMesssage()" class="btn btn-sm clear-btn">
+                </div>
+
+            </form>       
+  
+        </div>
+
+        <div class="map-section">
+            <div #googleMap id="map">
+            </div>
+        </div>
+    </div>
 </div>
-<br/>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>

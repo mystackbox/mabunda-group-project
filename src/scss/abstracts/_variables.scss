@@ -12,3 +12,16 @@ $global-gap: 10px;
 
 /* global background color variables */
 $global-bg-color: rgba(245,245,245, 0.5);
+
+/* global form controls - textbox */
+$input-text-border: 1px solid rgba(245,245,245, 0.5);
+$input-text-font-size: 10px;
+$input-text-font-color: rgba(245,245,245, 0.5);
+
+/* global form controls - placeholder */
+$form-placeholder-size: 13px;
+$form-placeholder-color: lightgrey;
+
+/* global form controls - error messages */
+$error-message-color: red;
+

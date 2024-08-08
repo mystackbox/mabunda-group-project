@@ -4,9 +4,14 @@
 /* global border radius */
 /* global Layouts gaps */
 /* global background color variables */
+/* global form controls - textbox */
+/* global form controls - placeholder */
+/* global form controls - error messages */
 /* Page content Grid Layout */
 /* page-title and sidebar styles */
 /* page-content-section */
+/* page-content-paragraph */
+/* form */
 /*  Rest to default setting */
 * {
   margin: 0;
@@ -34,6 +39,7 @@ header {
   row-gap: 12px;
   color: #fff;
   cursor: pointer;
+  /* fade-in background color */
   animation-name: fade-bg;
   animation-duration: 2s;
   /*  Hero section */
@@ -44,15 +50,17 @@ header .hero-header-section {
   font-size: 24px;
   border-left: 7px solid lightgrey;
   padding-left: 5px;
-  font-stretch: normal;
+  /* on hover */
   transition-property: all;
   transition-duration: 0.5s;
-  animation-name: left-ease-in;
-  animation-duration: 2s;
+  /* hero header animation - when page loads */
+  animation-name: slide-right;
+  animation-duration: 1.8s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 header .hero-header-section:hover {
-  border-left: 20px solid lightgrey;
-  padding-left: 15px;
+  border-left: 15px solid lightgrey;
+  padding-left: 20px;
 }
 header .hero-subheader-section {
   font-size: 20px;
@@ -61,6 +69,10 @@ header .hero-subheader-section {
 header .hero-button-section {
   padding-left: 11px;
   margin-top: 8px;
+  /* hero button animation - when page loads */
+  animation-name: slide-left;
+  animation-duration: 1.8s;
+  animation-timing-function: cubic-bezier(0, 0, 0.165, 1);
   /* button */
 }
 header .hero-button-section .get-in-touch-btn {
@@ -69,17 +81,30 @@ header .hero-button-section .get-in-touch-btn {
   padding: 3px 34px;
   color: #fff;
   cursor: pointer;
-  font-size: 16px;
-  /* transform eg Bg-color */
+  font-size: 13px;
+  /* on hover */
   transition-property: all;
   transition-duration: 0.8s;
-  /* animate eg move from left to right */
-  animation-name: bottom-ease-in;
-  animation-duration: 2s;
 }
 header .hero-button-section .get-in-touch-btn:hover {
   background-color: rgb(255, 140, 0);
   border: 1px solid rgb(255, 140, 0);
+  padding: 3px 50px;
+}
+
+/***** Slide Right *****/
+.slide-right {
+  animation: 3s slide-right;
+}
+
+/***** Slide Left *****/
+.slide-left {
+  animation: 3s slide-left;
+}
+
+/***** Global Slide *****/
+.slide-right, .slide-left {
+  width: 100%;
 }
 
 /*
@@ -89,30 +114,28 @@ header .hero-button-section .get-in-touch-btn:hover {
     - the hero subheader-section
     - the hero-button-section
 */
+@keyframes slide-right {
+  from {
+    margin-left: -50%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes slide-left {
+  from {
+    margin-left: 60%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
 @keyframes fade-bg {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes left-ease-in {
-  from {
-    margin-left: -20%;
-    opacity: 0;
-  }
-  to {
-    margin-left: 0%;
-  }
-}
-@keyframes bottom-ease-in {
-  from {
-    margin-left: 60%;
-    opacity: 0;
-  }
-  to {
-    margin-left: 0%;
   }
 }
 /* ====== Header Responsive Design Section ====== */
@@ -621,6 +644,87 @@ footer {
   .paragraph-img {
     display: none;
   }
+}
+/* You can add global styles to this file, and also import other style files */
+/* ====== Contact page Grid Layout ====== */
+.page-contant-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "page-name" "page-contant";
+  justify-content: center;
+  row-gap: 10px;
+  /* page-title section */
+  /* page content layout */
+  /* page content sections styles */
+}
+.page-contant-container .page-title {
+  grid-area: page-name;
+  border-left: 6px solid red;
+  padding: 8px;
+}
+.page-contant-container #contact-page-content {
+  grid-area: page-contant;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 10px;
+  grid-template-areas: "contact-form-row" "map-section";
+}
+.page-contant-container .contact-form-section, .page-contant-container .map-section {
+  padding: 10px;
+  background: rgba(245, 245, 245, 0.5);
+}
+.page-contant-container .contact-form-section .section-header, .page-contant-container .map-section .section-header {
+  margin-bottom: 10px;
+}
+.page-contant-container .contact-form-section .paragraph, .page-contant-container .map-section .paragraph {
+  padding-left: 10px;
+  border-left: 5px solid lightgrey;
+}
+
+.contact-form-section {
+  grid-area: contact-form-row;
+  /* form and its elements */
+}
+.contact-form-section form .form-group {
+  margin: 0px 0 10px 0;
+}
+.contact-form-section form .form-group input::placeholder, .contact-form-section form .form-group textarea::placeholder {
+  font-size: 13px;
+  color: lightgrey;
+}
+.contact-form-section form .form-group .form-validation-error-message {
+  color: red;
+}
+.contact-form-section form .form-group .btn {
+  margin-right: 15px;
+  border-radius: 0px;
+  font-size: 10px;
+  padding: 4px 25px 3px 25px;
+}
+.contact-form-section form .form-group .submit-button {
+  background-color: red;
+  color: #fff;
+}
+.contact-form-section form .form-group .submit-button:hover {
+  background-color: orange;
+}
+.contact-form-section form .form-group .clear-btn {
+  background-color: grey;
+  color: #fff;
+}
+.contact-form-section form .form-group .clear-btn:hover {
+  background-color: orange;
+}
+
+.map-section {
+  grid-area: map-section;
+}
+.map-section #map {
+  height: 190px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

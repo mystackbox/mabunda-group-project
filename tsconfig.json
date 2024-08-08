@@ -10,7 +10,10 @@
     "@components/*": ["app/shared/components/*"],
     "@env/*": ["environment/*"],
     "@features/*": ["app/features/*"],
-    "@layout/*": ["app/layout/*"]
+    "@layout/*": ["app/layout/*"],
+    "types": [
+      "googlemaps"
+    ]
     },
 
     "outDir": "./dist/out-tsc",

@@ -9,26 +9,30 @@ header {
     color: #fff;
     cursor:pointer;
 
+    /* fade-in background color */
     animation-name: fade-bg;
     animation-duration: 2s;
 
       /*  Hero section */
       .hero-header-section {
+
           font-size: 24px;
           border-left: 7px solid lightgrey;
           padding-left: 5px; 
-          font-stretch: normal;
           
+          /* on hover */
           transition-property: all;
           transition-duration: 0.5s;
 
-          animation-name: left-ease-in;
-          animation-duration: 2s;
+          /* hero header animation - when page loads */
+          animation-name: slide-right;
+          animation-duration: 1.8s;
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
       }
 
       .hero-header-section:hover {
-        border-left: 20px solid lightgrey;
-        padding-left: 15px; 
+        border-left: 15px solid lightgrey;
+        padding-left: 20px; 
       }
     
     /*  Hero subheader section */
@@ -42,6 +46,11 @@ header {
       padding-left: 11px;
       margin-top: 8px;
 
+      /* hero button animation - when page loads */
+      animation-name: slide-left;
+      animation-duration: 1.8s;
+      animation-timing-function: cubic-bezier(0.0, 0.0, 0.165, 1);
+
       /* button */
       .get-in-touch-btn {
         background-color: rgba(0,0,0, 0);
@@ -49,23 +58,37 @@ header {
         padding: 3px 34px;
         color: #fff;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 13px;
         
-        /* transform eg Bg-color */
+         /* on hover */
         transition-property: all;
         transition-duration: 0.8s;
+
         
-        /* animate eg move from left to right */
-        animation-name: bottom-ease-in;
-        animation-duration: 2s;
 
       }
 
       .get-in-touch-btn:hover {
         background-color: rgba(255,140,0, 1);
         border: 1px solid rgba(255,140,0, 1);
+        padding: 3px 50px;
       }
     }  
+}
+
+/***** Slide Right *****/
+.slide-right {
+  animation: 3s slide-right;
+}
+
+/***** Slide Left *****/
+.slide-left {
+  animation: 3s slide-left;
+}
+
+/***** Global Slide *****/
+.slide-right, .slide-left {
+  width: 100%;
 }
 
 /*
@@ -76,6 +99,27 @@ header {
     - the hero-button-section
 */
 
+@keyframes slide-right {
+  from {
+    margin-left: -50%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 60%;
+    // width: 200px;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+//============================
+
 @keyframes fade-bg {
   0% {
       opacity: 0;
@@ -85,25 +129,18 @@ header {
   } 
 }
 
-@keyframes left-ease-in {
-  from {
-    margin-left: -20%;
-    opacity: 0;
-  }
-  to {
-    margin-left: 0%;
-  }
-}
+// @keyframes left-ease-in {
+//   from {
+//     margin-left: 0%;
+//   }
+//   to {
+//     margin-left: 0%;
+//   }
+// }
 
-@keyframes bottom-ease-in {
-  from {
-    margin-left: 60%;
-    opacity: 0;
-  }
-  to {
-    margin-left: 0%;
-  }
-}
+// @keyframes right-ease-in {
+
+// }
 
 /* ====== Header Responsive Design Section ====== */
 
