@@ -13,6 +13,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SideBarComponent } from './layout/side-bar/side-bar.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,11 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     NavBarComponent,
     SideBarComponent,
   ],
-  imports: [BrowserModule, RouterModule, AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    RouterModule, 
+    AppRoutingModule,
+    FormsModule],
   providers: [
     provideClientHydration(),
     {

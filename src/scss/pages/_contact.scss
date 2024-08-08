@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+/* ====== Contact page Grid Layout ====== */
+.page-contant-container {
+    @include page-content-layout;
+   
+
+ /* page-title section */
+    .page-title {
+    @include page-title-styles; 
+    }
+
+    /* page content layout */
+    #contact-page-content {
+        @include page-content-section;
+        grid-template-areas: 
+        "contact-form-row"
+        "map-section";
+    }
+
+    /* page content sections styles */
+    .contact-form-section, .map-section {
+      @include text-section;
+    }
+}
+
+.contact-form-section {
+    grid-area: contact-form-row; 
+    @include page-content-form;
+}
+
+.map-section {
+    grid-area: map-section; 
+    #map {
+        height: 190px;
+        width: 100%;
+       }
+}
