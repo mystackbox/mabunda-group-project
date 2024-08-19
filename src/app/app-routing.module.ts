@@ -7,6 +7,8 @@ import { ContactModule } from './features/contact/contact.module';
 import { HomeModule } from './features/home/home.module';
 import { ServiceModule } from '@features/service/service.module';
 import { GalleryModule } from '@features/gallery/gallery.module';
+import { PageNotFoundModule } from '@features/page-not-found/page-not-found.module';
+import { PageNotFoundComponent } from './features/page-not-found/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -37,15 +39,18 @@ const routes: Routes = [
       {
         path: 'contact',
         loadChildren: () => import('@features/contact/contact.module').then((m):typeof ContactModule => m.ContactModule)
+      },
+      {
+        path: 'page-not-found',
+        loadChildren: () => import('@features/page-not-found/page-not-found.module').then((m):typeof PageNotFoundModule => m.PageNotFoundModule)
+      },
+      {
+        path: '**',
+        redirectTo: '/page-not-found'
       }
-      // ,
-      // {
-      //   path: '**',
-      //   loadChildren: () => import('@features/notfound/notfound.module').then((m):typeof NotFoundModule => m.NotFoundModule)
-      // }
     ]
   }
-];
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: true})],

@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+/* ====== About page Grid Layout ====== */
+.page-contant-container {
+    @include page-content-layout;
+
+ /* page-title section */
+    .page-title {
+    @include page-title-styles; 
+    }
+
+
+    #pagenotfound-page-content {
+        @include page-content-section;
+        grid-template-areas: 
+        "not-found-message-row";
+
+        .not-found-message-section {
+            grid-area: not-found-message-row;
+            @include text-section;
+
+            .paragraph {
+               margin-bottom: 10px;
+            }
+            
+            .content-hyperlink {
+                color: #fff;
+                text-decoration: none;
+                background-color: red;
+                margin-top: 5px;
+                border-radius: 0px;
+                font-size: $global-font-size - 4;
+                padding: 4px 25px 3px 25px;
+            }
+          }
+    }
+
+   
+}
