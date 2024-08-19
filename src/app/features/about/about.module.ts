@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from './pages/about/about.component';
 import { AboutRoutingModule } from './about-routing.module';
 
-
-
 @NgModule({
-  declarations: [AboutComponent],
+  declarations: [
+    AboutComponent
+  ],
   imports: [
     CommonModule,
     AboutRoutingModule
