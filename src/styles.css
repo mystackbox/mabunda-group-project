@@ -576,7 +576,7 @@ footer {
   }
 }
 /* You can add global styles to this file, and also import other style files */
-/* ====== Home page Grid Layout ====== */
+/* ====== About page Grid Layout ====== */
 .page-contant-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -627,7 +627,129 @@ footer {
   grid-area: objectives-row;
 }
 
-/* ====== Homepage Responsive Design Section ====== */
+/* ====== Aboutpage Responsive Design Section ====== */
+/* Views on different screen sizes */
+@media screen and (max-width: 599px) {
+  /* Cards - page content section - mobile mode*/
+  .page-contant .cards-row-content {
+    display: none;
+  }
+  /* paragraph - page content section - mobile mode*/
+  .page-contant .paragraph-row-content {
+    margin-bottom: 0px;
+  }
+}
+/* Views on bigger screen sizes */
+@media screen and (min-width: 600px) {
+  .paragraph-img {
+    display: none;
+  }
+}
+/* You can add global styles to this file, and also import other style files */
+/* ====== Services page Grid Layout ====== */
+.page-contant-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "page-name" "page-contant";
+  justify-content: center;
+  row-gap: 10px;
+  /* page-title section */
+}
+.page-contant-container .page-title {
+  grid-area: page-name;
+  border-left: 6px solid red;
+  padding: 8px;
+}
+.page-contant-container #services-page-content {
+  grid-area: page-contant;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 10px;
+  grid-template-areas: "introduction-row" "sa-services-row" "mo-services-row";
+}
+.page-contant-container .introduction-section, .page-contant-container .sa-services-section, .page-contant-container .mo-services-section {
+  padding: 10px;
+  background: rgba(245, 245, 245, 0.5);
+}
+.page-contant-container .introduction-section .section-header, .page-contant-container .sa-services-section .section-header, .page-contant-container .mo-services-section .section-header {
+  margin-bottom: 10px;
+}
+.page-contant-container .introduction-section .paragraph, .page-contant-container .sa-services-section .paragraph, .page-contant-container .mo-services-section .paragraph {
+  padding-left: 10px;
+  border-left: 5px solid lightgrey;
+}
+
+/* page-content-section */
+.introduction-section {
+  grid-area: introduction-row;
+}
+
+/* page-content-section */
+.sa-services-section {
+  grid-area: sa-services-row;
+}
+
+/* page-content-section */
+.mo-services-section {
+  grid-area: mo-services-row;
+}
+
+.accordion {
+  padding-bottom: 1px;
+}
+
+.inner-accordion {
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.accordion-body {
+  margin: 0px 5px 0px 0px;
+  padding: 0px 0px 0px 5px;
+}
+
+.outer-header {
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid lightgrey;
+  background-color: #f8f9fa;
+}
+
+.outer-header:not(.collapsed) {
+  box-shadow: none;
+  background-color: #f8f9fa;
+  border: 1px solid lightgrey;
+}
+
+.outer-header:focus {
+  box-shadow: none;
+  background-color: #f8f9fa;
+  border: 1px solid lightgrey;
+}
+
+.inner-header {
+  padding: 5px 5px 5px 12px;
+  border: 1px solid rgb(245, 245, 245);
+}
+
+.inner-header:not(.collapsed) {
+  box-shadow: none;
+  background-color: #f8f9fa;
+}
+
+.inner-header:focus {
+  box-shadow: none;
+  background-color: #f8f9fa;
+}
+
+/* ====== Services Responsive Design Section ====== */
 /* Views on different screen sizes */
 @media screen and (max-width: 599px) {
   /* Cards - page content section - mobile mode*/
@@ -721,9 +843,10 @@ footer {
 
 .map-section {
   grid-area: map-section;
+  margin-bottom: 10px;
 }
 .map-section #map {
-  height: 190px;
+  height: 218px;
   width: 100%;
 }
 

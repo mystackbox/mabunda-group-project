@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-/* ====== Home page Grid Layout ====== */
+/* ====== About page Grid Layout ====== */
 .page-contant-container {
     @include page-content-layout;
 
@@ -22,12 +22,12 @@
     }
 }
 
- /* page-content-section */
+/* page-content-section */
  .background-section {
     grid-area: background-row;
 }
 
- /* page-content-section */
+/* page-content-section */
  .mission-section {
     grid-area: mission-row; 
 }
@@ -37,7 +37,7 @@
     grid-area: objectives-row; 
 }
 
-/* ====== Homepage Responsive Design Section ====== */
+/* ====== Aboutpage Responsive Design Section ====== */
 
  /* Views on different screen sizes */
 @media screen and (max-width: 599px) {
