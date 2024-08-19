@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
         const mapOptions: google.maps.MapOptions = {
           // Centered to Hyderabad, India
           center: new google.maps.LatLng(17.412127, 78.474921),
-          zoom: 15,
+          zoom: 14,
         };
     }
   

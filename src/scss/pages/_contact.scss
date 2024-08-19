@@ -31,8 +31,9 @@
 
 .map-section {
     grid-area: map-section; 
+    margin-bottom: 10px;
     #map {
-        height: 190px;
+        height: 218px;
         width: 100%;
        }
 }
