@@ -9,6 +9,7 @@ import { ServiceModule } from '@features/service/service.module';
 import { GalleryModule } from '@features/gallery/gallery.module';
 import { PageNotFoundModule } from '@features/page-not-found/page-not-found.module';
 import { PageNotFoundComponent } from './features/page-not-found/pages/page-not-found/page-not-found.component';
+import { FaqModule } from '@features/faq/faq.module';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: 'contact',
         loadChildren: () => import('@features/contact/contact.module').then((m):typeof ContactModule => m.ContactModule)
+      },
+      {
+        path: 'faq',
+        loadChildren: () => import('@features/faq/faq.module').then((m):typeof FaqModule => m.FaqModule)
       },
       {
         path: 'page-not-found',

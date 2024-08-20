@@ -9,8 +9,7 @@
                         "page-name"
                         "page-contant";
     justify-content: center;
-    row-gap: $global-gap;
-    
+    row-gap: $global-gap;  
 }
 
 /* page-title and sidebar styles */
@@ -28,6 +27,26 @@
     grid-template-rows: auto;
     justify-content: center;
     gap: $global-gap;
+}
+
+/* inner accrodion */
+@mixin standard-accordion {
+    
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(245,245,245, 1);
+    font-size: $global-font-size;
+
+    &:not(.collapsed) {
+        box-shadow: none;
+        background-color: #f8f9f0;
+        border: 1px solid rgba(245,245,245, 1);
+    }
+
+    &:focus {
+        box-shadow: none;
+        background-color: #f8f9f0;
+        border: 1px solid rgba(245,245,245, 1);
+    }
 }
 
 /* page-content-paragraph */
@@ -65,7 +84,6 @@
                 border-radius: 0px;
                 font-size: $global-font-size - 4;
                 padding: 4px 25px 3px 25px;
-
             }
 
             .submit-button {
@@ -83,8 +101,6 @@
                     background-color: orange;
                 }
             }
-
-
         }
     }  
 }

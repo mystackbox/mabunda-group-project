@@ -1,0 +1,78 @@
+@use '../abstracts' as *;
+
+/* ====== FAQ page Grid Layout ====== */
+.page-contant-container {
+    @include page-content-layout;
+
+ /* page-title section */
+    .page-title {
+    @include page-title-styles; 
+    }
+
+    #faq-page-content {
+        @include page-content-section;
+        grid-template-areas:
+        "introduction-row"
+        "faq-row";
+    }
+
+    .introduction-section, .faq-section {
+      @include text-section;
+    }
+}
+
+/* page-content-section */
+ .introduction-section {
+    margin-bottom: 5px;
+    grid-area: introduction-row;
+}
+
+/* page-content-section */
+ .faq-section {
+    padding: 5px 15px 5px 15px;
+    grid-area: faq-row; 
+
+}
+
+.accordion{
+    padding-bottom: 1px;
+    .inner-header, ul {
+        color: $global-font-color;
+    }
+}
+
+.inner-accordion {
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-body {
+    margin: 0px 5px 0px 0px;
+    padding: 0px 0px 0px 5px;
+}
+
+.inner-header {
+  @include standard-accordion;
+}
+
+/* ====== Services Responsive Design Section ====== */
+
+ /* Views on different screen sizes */
+@media screen and (max-width: 599px) {
+    /* paragraph - page content section - mobile mode*/
+    .page-contant .paragraph-row-content {
+        margin-bottom: 0px;
+    }
+}
+
+
+
+
+
+
+
+

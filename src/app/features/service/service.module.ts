@@ -10,4 +10,5 @@ import { ServiceRoutingModule } from './service-routing.module';
     ServiceRoutingModule
   ]
 })
+
 export class ServiceModule { }
